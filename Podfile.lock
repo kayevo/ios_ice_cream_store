@@ -1,16 +1,20 @@
 PODS:
   - Alamofire (4.9.1)
+  - MBProgressHUD (1.2.0)
 
 DEPENDENCIES:
   - Alamofire (= 4.9.1)
+  - MBProgressHUD (~> 1.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - MBProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
 
-PODFILE CHECKSUM: f6f80d4181e18dfaf7d2cfb54d63909ef0f9c167
+PODFILE CHECKSUM: e6fc51bf41cc73c85d27cdcda95f576450176df4
 
 COCOAPODS: 1.12.1

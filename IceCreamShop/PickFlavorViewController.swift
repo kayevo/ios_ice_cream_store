@@ -28,6 +28,7 @@
 
 import UIKit
 import Alamofire
+import MBProgressHUD
 
 public class PickFlavorViewController: UIViewController {
   // MARK: - Instance Properties
@@ -48,6 +49,7 @@ public class PickFlavorViewController: UIViewController {
   }
   
   private func loadFlavors() {
+  showLoadingHUD()
     // 1
     Alamofire.request(
       "https://www.raywenderlich.com/downloads/Flavors.plist",
@@ -71,8 +73,19 @@ public class PickFlavorViewController: UIViewController {
       // 5
       self.collectionView.reloadData()
       self.selectFirstFlavor()
+      self.hideLoadingHUD()
     }
   }
+  
+  private func showLoadingHUD() {
+    let hud = MBProgressHUD.showAdded(to: contentView, animated: true)
+    hud.label.text = "Loading..."
+  }
+
+  private func hideLoadingHUD() {
+    MBProgressHUD.hide(for: contentView, animated: true)
+  }
+
   
   
   private func selectFirstFlavor() {
