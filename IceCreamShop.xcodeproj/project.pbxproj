@@ -18,6 +18,7 @@
 		42801B781A881E5500DEB026 /* IceCreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42801B771A881E5500DEB026 /* IceCreamView.swift */; };
 		42B433FB1A89ECFB0091170B /* FlavorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B433FA1A89ECFB0091170B /* FlavorFactory.swift */; };
 		42C970621A8C9CAF002FEFF3 /* UIColor+RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C970611A8C9CAF002FEFF3 /* UIColor+RGBA.swift */; };
+		A18F6A768A343195506D74A8 /* Pods_IceCreamShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6BF9BF5EEBE21AB49DB5A7E /* Pods_IceCreamShop.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,9 @@
 		42801B771A881E5500DEB026 /* IceCreamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IceCreamView.swift; sourceTree = "<group>"; };
 		42B433FA1A89ECFB0091170B /* FlavorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlavorFactory.swift; sourceTree = "<group>"; };
 		42C970611A8C9CAF002FEFF3 /* UIColor+RGBA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+RGBA.swift"; sourceTree = "<group>"; };
+		9AC3A467D51F2694FD047DE5 /* Pods-IceCreamShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IceCreamShop.release.xcconfig"; path = "Target Support Files/Pods-IceCreamShop/Pods-IceCreamShop.release.xcconfig"; sourceTree = "<group>"; };
+		C3A7012023ABF46E99157EE1 /* Pods-IceCreamShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IceCreamShop.debug.xcconfig"; path = "Target Support Files/Pods-IceCreamShop/Pods-IceCreamShop.debug.xcconfig"; sourceTree = "<group>"; };
+		D6BF9BF5EEBE21AB49DB5A7E /* Pods_IceCreamShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IceCreamShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,12 +45,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A18F6A768A343195506D74A8 /* Pods_IceCreamShop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E2EBE940115F52DFD066E6F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C3A7012023ABF46E99157EE1 /* Pods-IceCreamShop.debug.xcconfig */,
+				9AC3A467D51F2694FD047DE5 /* Pods-IceCreamShop.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4274BF1A1A88273100937936 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +94,7 @@
 				42801B511A881DF600DEB026 /* IceCreamShop */,
 				42801B501A881DF600DEB026 /* Products */,
 				E1B3556271B9796A750387AC /* Frameworks */,
+				2E2EBE940115F52DFD066E6F /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -168,6 +184,7 @@
 		E1B3556271B9796A750387AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D6BF9BF5EEBE21AB49DB5A7E /* Pods_IceCreamShop.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -179,9 +196,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42801B6E1A881DF600DEB026 /* Build configuration list for PBXNativeTarget "IceCreamShop" */;
 			buildPhases = (
+				EEF1985323114A33DDAA094A /* [CP] Check Pods Manifest.lock */,
 				42801B4B1A881DF600DEB026 /* Sources */,
 				42801B4D1A881DF600DEB026 /* Resources */,
 				2E3FFC2B5D697FDBF99A9C5C /* Frameworks */,
+				CA6661F0929D8CBFE8F54F4A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,6 +259,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CA6661F0929D8CBFE8F54F4A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IceCreamShop/Pods-IceCreamShop-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IceCreamShop/Pods-IceCreamShop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEF1985323114A33DDAA094A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IceCreamShop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		42801B4B1A881DF600DEB026 /* Sources */ = {
@@ -378,6 +440,7 @@
 		};
 		42801B6F1A881DF600DEB026 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3A7012023ABF46E99157EE1 /* Pods-IceCreamShop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -400,6 +463,7 @@
 		};
 		42801B701A881DF600DEB026 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AC3A467D51F2694FD047DE5 /* Pods-IceCreamShop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

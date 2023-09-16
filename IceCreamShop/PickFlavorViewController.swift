@@ -27,29 +27,54 @@
 /// THE SOFTWARE.
 
 import UIKit
+import Alamofire
 
 public class PickFlavorViewController: UIViewController {
   // MARK: - Instance Properties
   public var flavors: [Flavor] = []
   private let flavorFactory = FlavorFactory()
-
+  
   // MARK: - Outlets
   @IBOutlet var contentView: UIView!
   @IBOutlet var collectionView: UICollectionView!
   @IBOutlet var iceCreamView: IceCreamView!
   @IBOutlet var label: UILabel!
-
+  
   // MARK: - View Lifecycle
   public override func viewDidLoad() {
     super.viewDidLoad()
-
+    
     loadFlavors()
   }
-
+  
   private func loadFlavors() {
-    // TO-DO: Implement this
+    // 1
+    Alamofire.request(
+      "https://www.raywenderlich.com/downloads/Flavors.plist",
+      method: .get,
+      encoding: PropertyListEncoding(format: .xml, options: 0))
+    .responsePropertyList { [weak self] response in
+      // 2
+      guard let self = self else { return }
+      
+      // 3
+      guard
+        response.result.isSuccess,
+        let dictionaryArray = response.result.value as? [[String: String]]
+      else {
+        return
+      }
+      
+      // 4
+      self.flavors = self.flavorFactory.flavors(from: dictionaryArray)
+      
+      // 5
+      self.collectionView.reloadData()
+      self.selectFirstFlavor()
+    }
   }
-
+  
+  
   private func selectFirstFlavor() {
     guard let flavor = flavors.first else {
       return
@@ -71,11 +96,11 @@ extension PickFlavorViewController: UICollectionViewDataSource {
   private struct CellIdentifiers {
     static let scoop = "ScoopCell"
   }
-
+  
   public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return flavors.count
   }
-
+  
   public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.scoop, for: indexPath) as! ScoopCell
     let flavor = flavors[indexPath.row]
